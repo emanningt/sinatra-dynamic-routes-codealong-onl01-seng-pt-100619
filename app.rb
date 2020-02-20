@@ -15,4 +15,23 @@ class App < Sinatra::Base
 
   # Code your final two routes here:
 
+  get '/medicines/:id' do
+  @medicine = all_the_medicines.select do |medicine|
+    medicine.id == params[:id]
+  end.first
+  erb :'/medicines/show.html'
+end
+
+  get '/goodbye/:name' do 
+   @medicin = all_the_medicines.select do |name|
+     name.id == params[:id]
+   end.first
+  end 
+  
+  get '/multiply/:num1/:num2' do 
+    @medicin = all_the_medicines.select do |nums|
+     nums.id == params[:id]
+   end.first
+  end 
+  
 end
